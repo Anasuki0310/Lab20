@@ -1,12 +1,11 @@
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include <string>
-#include "lab20.h"
-
-using namespace std;
-
- 
+#include"lab20.h"
+#include<iostream>
+#include<string>
+#include<ctime>
+#include<cstdlib>
+#include<vector>
+#include<iomanip>
+  
 int main(){
 	srand(time(0));
 	
@@ -26,10 +25,13 @@ int main(){
 	cout << " [1] Sword \n [2] Axes \n [3] Shield \n [4] Armor \n";
 	cout << "Please selet your equipment: ";
 	cin >> eq;
-	if(eq == '1') hero.equip(&sword);
-else if(eq == '2') hero.equip(&axes);
-else if(eq == '3') hero.equip(&shield);
-else if(eq == '4') hero.equip(&armor);
+	
+	switch(eq){
+		case '1': hero.equip(&sword); break;
+		case '2': hero.equip(&axes); break;
+		case '3': hero.equip(&shield); break;
+		case '4': hero.equip(&armor); break;
+	}
 
 	
 	
@@ -65,14 +67,17 @@ else if(eq == '4') hero.equip(&armor);
 		if(player_action == 'H') p = hero.heal();
 		
 		if(player_action == 'C'){
-			char new_eq;	
+			char eq;	
 			cout << " [1] Sword \n [2] Axes \n [3] Shield \n [4] Armor \n";
 			cout << "Please select your equipment: ";
 			cin >> eq;
-		    if(eq == '1') hero.equip(&sword);
-			else if(eq == '2') hero.equip(&axes);
-			else if(eq == '3') hero.equip(&shield);
-			else if(eq == '4') hero.equip(&armor);
+			switch(eq){
+		        case '1': hero.equip(&sword); break;
+		        case '2': hero.equip(&axes); break;
+		        case '3': hero.equip(&shield); break;
+		        case '4': hero.equip(&armor); break;
+	}
+
 			
 		}
 		
